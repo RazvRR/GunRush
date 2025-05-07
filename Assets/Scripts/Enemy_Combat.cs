@@ -33,9 +33,13 @@ public class Enemy_Combat : MonoBehaviour
 
     public int damage = 1;
 
+    // TODO: refactor to distinguish between player and non-playable
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<PlayerHealth>().ChangeHealth(-damage);
+        HealthManager healthMng = collision.gameObject.GetComponent<HealthManager>();
+        if (healthMng)
+        {
+            healthMng.ChangeHealth(-damage);
+        }
     }
-
 }
