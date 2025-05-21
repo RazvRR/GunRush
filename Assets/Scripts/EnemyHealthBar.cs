@@ -8,9 +8,7 @@ public class EnemyHealthBar : MonoBehaviour
     public GameObject healthBarPrefab;
     public float distanceFromPlayer = 0.01f;
     private GameObject healthBarInstance { get; set; }
-    
     private HealthManager healthMng;
-
     private RectTransform healthBarRect;
     private Canvas uiCanvas;
     
