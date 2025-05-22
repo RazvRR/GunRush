@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1457959959}
   enemyPrefab: {fileID: 8012340824579292954, guid: 5f919d20e512a6943b1f83acddab2619, type: 3}
-  numberOfEnemies: 5
+  numberOfEnemies: 3
   spawnRadius: 1
 --- !u!4 &18016628
 Transform:
@@ -1156,10 +1156,6 @@ PrefabInstance:
     - target: {fileID: 8320126396421831236, guid: 47761cc4fe9d604438e5e4afe91315c4, type: 3}
       propertyPath: m_Name
       value: shot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320126396421831236, guid: 47761cc4fe9d604438e5e4afe91315c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
