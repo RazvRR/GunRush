@@ -34,7 +34,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(int amount)
+    public int ChangeHealth(int amount)
     { 
         currentHealth += amount;
         currentHealth =
@@ -59,5 +59,7 @@ public class HealthManager : MonoBehaviour
                 pauseMenu.GotoMainMenu();
             }
         }
+
+        return maxHealth - currentHealth;
     }
 }

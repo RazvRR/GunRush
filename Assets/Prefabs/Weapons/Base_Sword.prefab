@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7788986693554791831}
   - component: {fileID: 5832681197714748552}
   m_Layer: 0
-  m_Name: sword
+  m_Name: Base_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
@@ -129,7 +129,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -173,3 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8320126396421831236, guid: 47761cc4fe9d604438e5e4afe91315c4, type: 3}
   timeToShowEffect: 0.5
+  bulletForce: 2
+  damage: 1
+  obstacleLayers:
+  - serializedVersion: 2
+    m_Bits: 8

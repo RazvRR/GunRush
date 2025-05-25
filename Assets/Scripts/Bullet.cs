@@ -6,11 +6,18 @@ public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect; // Prefab for the hit effect
     public float timeToShowEffect = 2f;
-    private int damageToDeal;
+    
+    public float bulletForce = 20f; // The force with which the bullet will be fired
+    public int damage = 1;
+    
+    public LayerMask[] obstacleLayers;
 
-    public void SetDamage(int damage)
+    private void DestroyBullet()
     {
-        damageToDeal = damage;
+        // Instantiate the hit effect at the collision point and destroy it after 1 second
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, timeToShowEffect);
+        Destroy(gameObject);
     }
     
     void OnCollisionEnter2D(Collision2D collision)
@@ -18,12 +25,9 @@ public class Bullet : MonoBehaviour
         HealthManager healthMng = collision.gameObject.GetComponent<HealthManager>();
         if (healthMng != null)
         {
-            healthMng.ChangeHealth(-damageToDeal);
+            healthMng.ChangeHealth(-damage);
         }
 
-        // Instantiate the hit effect at the collision point and destroy it after 1 second
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, timeToShowEffect);
-        Destroy(gameObject);
+        DestroyBullet();
     }
 }

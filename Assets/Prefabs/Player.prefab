@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1584042966693312435}
   - component: {fileID: 7594001632032673367}
   - component: {fileID: 3282352853169484010}
+  - component: {fileID: 4299702039826480632}
   - component: {fileID: 8302784384235207598}
   - component: {fileID: 837970574785335090}
   m_Layer: 0
@@ -148,6 +149,21 @@ MonoBehaviour:
   maxHealth: 10
   healthBar: {fileID: 0}
   pauseMenu: {fileID: 0}
+--- !u!114 &4299702039826480632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556428170450734555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54476d19db6f1c94684761d815c9c98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponUpgrades:
+  - {fileID: 449496815053422486, guid: 99eda63e381a7a3419b7d8f988789f88, type: 3}
+  - {fileID: 449496815053422486, guid: 1e1360062fe2ddf4295260394ebd72a7, type: 3}
 --- !u!61 &8302784384235207598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -206,9 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 4765063301097195130}
-  bulletPrefab: {fileID: 8680241558475561381, guid: 3f7203c9109da3844a2b988e683d2d52, type: 3}
-  bulletForce: 3
-  damage: 1
+  bulletPrefab: {fileID: 5832681197714748552, guid: 3f7203c9109da3844a2b988e683d2d52, type: 3}
 --- !u!1 &8222735339778515295
 GameObject:
   m_ObjectHideFlags: 0

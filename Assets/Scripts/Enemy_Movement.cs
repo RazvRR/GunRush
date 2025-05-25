@@ -14,8 +14,7 @@ public class Enemy_Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-
+    
     void Update()
     {
         if (isChasing == true)
