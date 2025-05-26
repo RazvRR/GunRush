@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1236128587
+    locked: 0
+  - name: Props
+    uniqueID: 4093762605
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3377658731
+    locked: 0
+  - name: Player
+    uniqueID: 3993928709
+    locked: 0
+  - name: Bullet
+    uniqueID: 702375607
+    locked: 0
+  - name: Enemy
+    uniqueID: 1246462731
+    locked: 0
+  - name: Canvas
+    uniqueID: 2535159361
+    locked: 0
