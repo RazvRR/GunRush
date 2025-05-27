@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 
 public class HealthManager : MonoBehaviour
-{
-
+{ 
+    public GameManager gameManager;
     public int XpReward = 3;
     public delegate void MonsterDefeated(int xp);
     public static event MonsterDefeated OnMonsterDefeated;
@@ -15,9 +15,10 @@ public class HealthManager : MonoBehaviour
     public int maxHealth;
 
     public Slider healthBar;
-    
+
     public PauseMenu pauseMenu;
 
+    private bool isDead;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -35,7 +36,7 @@ public class HealthManager : MonoBehaviour
     }
 
     public int ChangeHealth(int amount)
-    { 
+    {
         currentHealth += amount;
         currentHealth =
             Mathf.Clamp(currentHealth, 0, maxHealth); // Asigură-te că sănătatea rămâne între 0 și maxHealth
@@ -50,9 +51,9 @@ public class HealthManager : MonoBehaviour
         {
             OnMonsterDefeated(XpReward);
             // Dezactivează obiectul când sănătatea ajunge la 0
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);
             healthBar.gameObject.SetActive(false);
-            
+
             // If you are a player...
             if (GetComponent<Player_Movement>())
             {
@@ -61,5 +62,15 @@ public class HealthManager : MonoBehaviour
         }
 
         return maxHealth - currentHealth;
+    }
+
+    void Update()
+    {
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            gameManager.gameOver();
+            Debug.Log("Dead");
+        }
     }
 }
