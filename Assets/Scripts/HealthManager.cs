@@ -18,7 +18,13 @@ public class HealthManager : MonoBehaviour
 
     public PauseMenu pauseMenu;
 
-    private bool isDead;
+    private bool isDead = false;
+
+    public bool IsDead()
+    {
+        return isDead;
+    }
+    
     private void Start()
     {
         currentHealth = maxHealth;
@@ -49,6 +55,8 @@ public class HealthManager : MonoBehaviour
         // TODO: should destroy instead of hiding the object
         if (currentHealth <= 0)
         {
+            isDead = true;
+
             OnMonsterDefeated(XpReward);
             // Dezactivează obiectul când sănătatea ajunge la 0
             gameObject.SetActive(false);
@@ -57,20 +65,11 @@ public class HealthManager : MonoBehaviour
             // If you are a player...
             if (GetComponent<Player_Movement>())
             {
-                pauseMenu.GotoMainMenu();
+                gameManager.gameOver();
+                Debug.Log("Dead");
             }
         }
 
         return maxHealth - currentHealth;
-    }
-
-    void Update()
-    {
-        if (currentHealth <= 0 && !isDead)
-        {
-            isDead = true;
-            gameManager.gameOver();
-            Debug.Log("Dead");
-        }
     }
 }

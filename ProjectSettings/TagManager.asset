@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Pickups
-  - 
-  - 
+  - Minimap
+  - Ground_Props
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1246462731
+    locked: 0
+  - name: Minimap
+    uniqueID: 723506657
     locked: 0
   - name: Canvas
     uniqueID: 2535159361
